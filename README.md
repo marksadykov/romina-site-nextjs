@@ -1,36 +1,103 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Romina Site - Next.js
 
-## Getting Started
+Этот проект представляет собой миграцию сайта Romina с React + Vite на Next.js 15 с поддержкой SEO.
 
-First, run the development server:
+## Особенности
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+- ✅ **Next.js 15** - Последняя версия с App Router
+- ✅ **SEO оптимизация** - Мета-теги, sitemap, robots.txt
+- ✅ **TypeScript** - Полная поддержка типов
+- ✅ **SCSS модули** - Стили с поддержкой модулей
+- ✅ **Responsive дизайн** - Адаптивная верстка
+- ✅ **Оптимизация изображений** - Next.js Image компонент
+- ✅ **Статическая генерация** - Быстрая загрузка страниц
+
+## Структура проекта
+
+```
+src/
+├── app/                    # App Router (Next.js 13+)
+│   ├── layout.tsx          # Корневой layout с SEO
+│   ├── page.tsx            # Главная страница
+│   ├── soft_furniture/     # Страница мягкой мебели
+│   ├── sitemap.ts          # Sitemap для SEO
+│   └── robots.ts           # Robots.txt для SEO
+├── components/             # React компоненты
+│   └── Logo/              # Логотип с анимацией
+├── entities/              # Бизнес-сущности
+│   └── SoftFurniture/     # Компонент мягкой мебели
+├── ui/                    # UI компоненты
+│   └── Horizontal/        # Горизонтальная линия
+├── wrappers/              # Контексты и провайдеры
+│   └── ProjectContext/    # Глобальный контекст
+└── styles/                # Стили и миксины
+    ├── base/              # Базовые стили
+    └── fonts/             # Шрифты
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## SEO возможности
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+### Мета-теги
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+- Автоматическая генерация title и description
+- Open Graph теги для социальных сетей
+- Поддержка русской локали
 
-## Learn More
+### Sitemap
 
-To learn more about Next.js, take a look at the following resources:
+- Автоматическая генерация sitemap.xml
+- Настройка приоритетов и частоты обновления
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+### Robots.txt
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+- Настройка индексации поисковыми системами
+- Указание расположения sitemap
 
-## Deploy on Vercel
+## Запуск проекта
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+```bash
+# Установка зависимостей
+npm install
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+# Запуск в режиме разработки
+npm run dev
+
+# Сборка для продакшена
+npm run build
+
+# Запуск продакшен версии
+npm start
+```
+
+## Миграция с React + Vite
+
+### Основные изменения:
+
+1. **Роутинг**: React Router → Next.js App Router
+2. **Стили**: Vite CSS → Next.js SCSS модули
+3. **Изображения**: Обычные img → Next.js Image
+4. **Контекст**: Добавлена директива "use client"
+5. **SEO**: Добавлены мета-теги и sitemap
+
+### Преимущества Next.js:
+
+- **SSR/SSG**: Серверный рендеринг для лучшего SEO
+- **Оптимизация**: Автоматическая оптимизация изображений и шрифтов
+- **Производительность**: Code splitting и lazy loading
+- **SEO**: Встроенная поддержка мета-тегов и sitemap
+
+## Развертывание
+
+Проект готов к развертыванию на:
+
+- Vercel (рекомендуется)
+- Netlify
+- Любом хостинге с поддержкой Node.js
+
+## Технические детали
+
+- **Next.js**: 15.5.4
+- **React**: 18.2.0
+- **TypeScript**: 5.x
+- **SCSS**: Поддержка модулей
+- **Tailwind CSS**: Для утилитарных стилей

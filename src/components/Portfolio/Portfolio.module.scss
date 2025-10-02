@@ -1,0 +1,160 @@
+@use "src/styles/mixins.scss" as *;
+
+.container {
+  background: #eae8da;
+
+  &__anchor {
+    display: block;
+    position: relative;
+    top: -130px;
+    visibility: hidden;
+  }
+
+  &__inner {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 20px;
+
+    &__title {
+      font-size: 36px;
+      margin-bottom: 20px;
+    }
+
+    &__horizontal {
+      margin-bottom: 10px;
+    }
+  }
+
+  &__grid {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+
+    @include phone {
+      display: none;
+    }
+
+    &__column {
+      width: 50%;
+      height: 800px;
+
+      &__image {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+
+      &__title {
+        text-align: center;
+        font-size: 26px;
+        margin-top: 50px;
+        color: grey;
+      }
+
+      &__sub-title {
+        text-align: center;
+        font-size: 26px;
+        margin-top: 6px;
+        color: grey;
+      }
+
+      &__item-a {
+        text-align: center;
+        font-size: 38px;
+        margin-top: 50px;
+
+        cursor: pointer;
+        color: grey;
+
+        &:hover {
+          color: black;
+        }
+      }
+
+      &__item-b {
+        font-size: 30px;
+        margin-top: 30px;
+        margin-left: 170px;
+
+        cursor: pointer;
+        color: grey;
+
+        &__item {
+          &:hover {
+            color: black;
+          }
+        }
+      }
+
+      &__item-c {
+        font-size: 26px;
+        text-align: center;
+        margin-top: 30px;
+
+        cursor: pointer;
+        color: grey;
+
+        &:hover {
+          color: black;
+        }
+      }
+
+      &__item-d {
+        text-align: center;
+        font-size: 28px;
+        margin-top: 200px;
+
+        cursor: pointer;
+        color: grey;
+
+        &:hover {
+          color: black;
+        }
+      }
+
+      &__item-e {
+        text-align: center;
+        font-size: 38px;
+        margin-top: 90px;
+
+        cursor: pointer;
+        color: grey;
+
+        &:hover {
+          color: black;
+        }
+      }
+    }
+  }
+
+  &__grid-phone {
+    @include largerThanPhone {
+      display: none;
+    }
+
+    height: 500px;
+
+    & div {
+      height: 100%;
+    }
+
+    &__image {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    &__controls {
+      display: flex;
+      flex-direction: column-reverse;
+
+      &__slides {
+        height: 2px !important;
+        padding-bottom: 20px;
+        display: flex;
+        gap: 5px;
+      }
+    }
+  }
+}

@@ -1,0 +1,40 @@
+.container {
+  background: white;
+
+  display: flex;
+  justify-content: center;
+
+  padding-top: 30px;
+  padding-left: 10%;
+  padding-right: 10%;
+  padding-bottom: 60px;
+
+  &__anchor {
+    display: block;
+    position: relative;
+    top: -130px;
+    visibility: hidden;
+  }
+
+  &__inner {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    &__title {
+      font-size: 36px;
+      margin-bottom: 20px;
+    }
+
+    &__horizontal {
+      margin-bottom: 10px;
+    }
+
+    &__text {
+      text-align: center;
+      color: rgb(99, 99, 99);
+
+      font-size: 18px;
+    }
+  }
+}

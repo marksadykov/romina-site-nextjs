@@ -1,0 +1,122 @@
+@use "./base/includeMedia.scss" as *;
+
+//Media Queries
+
+// < 768px
+@mixin phone {
+  @include media("<md") {
+    @content;
+  }
+}
+
+// >= 768px & <= 1024px
+@mixin tablet {
+  @include media(">=md", "<=lg") {
+    @content;
+  }
+}
+
+// >= 1680px & < 1920px
+@mixin desktop-medium {
+  @include media(">=xxxlg", "<xxxxlg") {
+    @content;
+  }
+}
+
+// >= 1440px & < 1680px
+@mixin desktop-small {
+  @include media(">=xxlg", "<xxxlg") {
+    @content;
+  }
+}
+
+// >= 1024px & < 1440px
+@mixin desktop-tiny {
+  @include media(">=lg", "<xxlg") {
+    @content;
+  }
+}
+
+// >= 1024px & <= 1345px
+@mixin lg-device {
+  @include media(">=lg", "<=1345px") {
+    @content;
+  }
+}
+
+// <= 1024px
+@mixin lessThanTablet {
+  @include media("<=lg") {
+    @content;
+  }
+}
+
+// >= 768px
+@mixin largerThanPhone {
+  @include media(">=md") {
+    @content;
+  }
+}
+
+// < 1920px
+@mixin lessThanDesktopMedium {
+  @include media("<xxxxlg") {
+    @content;
+  }
+}
+
+// Позиционирование
+
+@mixin absoluteCenter {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+@mixin absoluteOverlay {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+}
+
+@mixin square($side, $border-radius: false) {
+  width: $side;
+  height: $side;
+
+  @if ($border-radius) {
+    border-radius: $border-radius;
+  }
+}
+
+@mixin flexCenter {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@mixin visualCenter($top: -2px) {
+  position: relative;
+  top: $top;
+}
+
+@mixin backgroundImage($url, $size: contain) {
+  background: url($url) no-repeat center;
+  background-size: $size;
+}
+
+// центрирование контента в ie для display: flex и align-items: center
+@mixin center-content-ie($width, $verticalPadding) {
+  &::after {
+    content: "";
+    display: inline-block;
+    min-height: $width - 2 * $verticalPadding;
+    visibility: hidden;
+
+    @content;
+  }
+}
+
+

@@ -1,0 +1,25 @@
+.container {
+  width: 100%;
+
+  & label {
+    color: white !important;
+    font-family: 'EBGaramond-Regular', sans-serif !important;
+  }
+
+  & input {
+    color: white !important;
+    font-family: 'EBGaramond-Regular', sans-serif !important;
+  }
+
+  & input::after {
+   background: white !important;
+  }
+
+  & div::before {
+    border-bottom: 2px solid white !important;
+  }
+
+  & div.MuiInput-underline::before {
+    border-bottom: 2px solid white !important;
+  }
+}

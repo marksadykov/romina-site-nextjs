@@ -1,0 +1,40 @@
+@use "sass:math";
+@use "src/styles/mixins.scss" as *;
+
+$carousel-gap: 20px;
+
+.container {
+  padding: $carousel-gap 40px;
+  display: flex;
+  justify-content: center;
+  background: transparent;
+  backdrop-filter: blur(6px);
+  border-radius: 30px;
+
+  position: sticky;
+  top: -300px;
+
+  z-index: 1000;
+
+  min-height: 400px;
+
+  @include phone {
+    top: -50px;
+    min-height: 100px;
+    border-radius: 10px;
+
+    padding: calc($carousel-gap / 4) 20px;
+  }
+
+  &__carousel {
+    width: calc(100% - #{math.div($carousel-gap, 4)});
+    display: flex;
+    justify-content: space-around;
+    gap: $carousel-gap;
+
+    @include phone {
+      width: 100%;
+      gap: calc($carousel-gap / 4);
+    }
+  }
+}

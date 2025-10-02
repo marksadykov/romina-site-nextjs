@@ -1,0 +1,60 @@
+@use "src/styles/mixins.scss" as *;
+
+.container {
+  position: relative;
+  border-radius: 30px;
+  overflow: hidden;
+  min-height: 400px;
+  width: 100%;
+
+  @include phone {
+    border-radius: 10px;
+    min-height: 200px;
+  }
+
+  &__image {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    filter: brightness(60%);
+    border-radius: inherit;
+
+    @include phone {
+      border-radius: inherit;
+    }
+
+    &_active {
+      @include phone {
+        width: 800%;
+      }
+    }
+  }
+
+  &__text {
+    @include absoluteCenter;
+
+    color: white;
+    text-align: center;
+    font-size: 30px;
+    white-space: nowrap;
+
+    &_small {
+      position: absolute;
+      top: 80%;
+      left: 50%;
+      transform: translate(-50%, 0);
+
+      @include phone {
+        top: 70%;
+      }
+    }
+
+    @include tablet {
+      font-size: 24px;
+    }
+
+    @include phone {
+      font-size: 16px;
+    }
+  }
+}

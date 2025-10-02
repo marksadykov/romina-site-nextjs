@@ -1,0 +1,11 @@
+@use "src/styles/mixins.scss" as *;
+
+.container {
+  height: 2px;
+  width: 20px;
+  background: grey;
+
+  &_active {
+    background: white;
+  }
+}

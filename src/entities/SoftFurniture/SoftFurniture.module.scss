@@ -1,0 +1,42 @@
+@import "@/styles/mixins.scss";
+
+.container {
+  padding: 30px 10%;
+
+  &__breads {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 30px;
+    font-size: 14px;
+    color: #666;
+
+    &__active {
+      color: #B68E69;
+      font-weight: 500;
+    }
+
+    a {
+      color: #666;
+      text-decoration: none;
+      transition: color 0.3s ease;
+
+      &:hover {
+        color: #B68E69;
+      }
+    }
+  }
+
+  &__header {
+    font-size: 24px;
+    line-height: 1.5;
+    color: #333;
+    text-align: center;
+    max-width: 800px;
+    margin: 0 auto;
+
+    @include phone {
+      font-size: 20px;
+    }
+  }
+}
